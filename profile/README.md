@@ -6,156 +6,130 @@
 
 [![💻Discord Server](https://img.shields.io/iscord/937479784148115456?style=flat&logo=discord&label=Discord&color=%237289DA&link=https%3A%2F%2Fdiscord.unleashedflip.com%2F)](https://iscord.unleashedflip.com)
 [![💻Website]([https://](https://subspectra.finnsabia.com/))](https://subspectra.finnsabia.com/)
-# SubSpectra - Flipper Zero Custom Firmware
-
-SubSpectra is a custom firmware for Flipper Zero focused on fun, customization, and expanded capabilities:
-
-- Funny animations and themes
-- More customization options
-- Infrared, Sub-GHz, NFC, RF tools
-- Games and entertainment
-- GPIO, Bluetooth, and USB tools
-- Download files directly from your Flipper Zero
-- You can clone this repo and make SubSpectra the ultimate firmware for you!
-- Includes built in language tool, languagetool-master, by [LanguageTool](https://github.com/languagetool-org)
-***
-## Building 
-- **Developer Documentation** - [developer.flipper.net](https://developer.flipper.net/flipperzero/doxygen)  
-- **[How to build](/documentation/HowToBuild.md#how-to-build-by-yourself) | [Project-structure](#project-structure)**
-- **CLion IDE** - How to setup workspace for flipper firmware development [by Savely Krasovsky](https://krasovs.ky/2022/11/01/flipper-zero-clion.html)
-- **"Hello world!"** - plugin tutorial [English<sub> by DroomOne</sub> ](https://github.com/DroomOne/Flipper-Plugin-Tutorial) | [Russian<sub> by Pavel Yakovlev</sub>](https://yakovlev.me/hello-flipper-zero)
-- [How to write your own app](https://flipper.atmanos.com/docs/overview/intro).
-
-### Project structure
-
-- `applications`    - Applications and services used in firmware
-- `assets`          - Assets used by applications and services
-- `debug`           - Debug tool: GDB-plugins, SVD-file and etc
-- `documentation`   - Documentation generation system configs and input files
-- `firmware`        - Firmware source code
-- `scripts`         - Supplementary scripts and python libraries home
-   
-***
-## Firmware Customization and Development
-### Customization
-1. Clone this repo:  
-   `git clone https://github.com/SYOP200/-.git`
-2. Follow Flipper Zero firmware build instructions [here](https://github.com/flipperdevices/flipperzero-firmware#building)
-3. Copy or link your custom apps and assets into `/apps/` and `/assets/`
-4. Run `./fbt` to build!
-
-
-- Place new apps in `/apps/`
-- Add assets (images, sounds) in `/assets/`
-- Document your tools in `/docs/`
-***
-## What's New
-
-> <details>
-> <summary><strong>Firmware Changes </strong></summary>
-> <br/>
->
-> - Many new protocols added
-> - Regional TX restrictions removed
-> - Extra Sub-GHz frequencies added
-> - Frequency range can be extended in settings file _(warning: It can damage Flipper's hardware)_
-> - Many rolling code [protocols](#current-modified-and-new-sub-ghz-protocols-list) now have the ability to save & send captured signals  
-> - FAAC SLH (Spa) & BFT Mitto (keeloq secure with seed) manual creation
-> - External CC1101 module support 
-> </details>
-
-> <details>
-> <summary><strong>Repo Changes </strong></summary>
-> <br/>
->
-> - New contributer @trnsk
-> - New SubSpectra image
-> - New disscusions
-> - Better organization
-***
-## License
-MIT LICENSING
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so.
-
-***
-## Download
-Click here to download the latest version of SubSpectra[SubSpectra.custom.firmware.zip](https://github.com/user-attachments/files/22583560/SubSpectra.custom.firmware.zip)
-If you want old versions, go to release and find the version you want to download. Click on the download button featured in all releases.
-If you want pre-releases then you can sign up on our discord server.
-For more information on downloading go to https://docs.flipper.net/
-> [!Caution]
-> When joining the Pre Release Program (PRP), pre released versions of SubSpectra may not work properly or there may be bugs. Pre Released versions go through very few moderation, this means that they may not be suported on your >Flipper Zero. To allow SubSpectra to perform at its finest use the latest suported version of SubSpectra.
+# **SubSpectra** 
+### custom firmware
 ***
 
-## Requirements
-Must have Flipper Zero device. No other products will work with this firmware. If you do not know how to install firmware to your Flipper Zero, go to https://stackoverflow.com/questions/73127708/how-to-flash-flipper-zero-with-custom-firmware
-***
-## Terms of Use
-> [!WARNING]
-> This software is intended solely for experimental purposes and is not meant for any illegal activities.
-> We do not condone unlawful behavior and strongly encourage you to use it only within the bounds of the law.
->
-> This project is developed independently and is not affiliated with Flipper Devices.
+SubSpectra is the organization behind the SubSpectra custom firmware for Flipper Zero devices. We build, maintain, and document an extensible custom firmware distribution intended to expand the capabilities of Flipper Zero hardware for lawful research, testing, and hobbyist use.
 
-***
-## 📘 Instructions
+This README gives a high-level overview of the project, community guidelines, and legal terms. For code, releases, installation instructions, and issue tracking please see the specific repository for the firmware: https://github.com/SubSpectra/flipper-zero-firmware (replace with the actual repo URL).
 
-### Firmware & main Apps feature
+Table of contents
+- About
+- What is SubSpectra firmware
+- Key features
+- Compatibility & safety
+- Getting started
+- Contribution & community
+- Security disclosures
+- Legal terms and license
+- Trademark & attribution
+- Contact
 
-- System: [How to change Flipper name](/documentation/CustomFlipperName.md)
-- BadUSB: [How to add new keyboard layouts](https://github.com/dummy-decoy/flipperzero_badusb_kl)
-- Infrared: [How to make captures to add them into Universal IR remotes](/documentation/InfraredCaptures.md)  
+About
+-----
+SubSpectra produces a community-driven custom firmware for Flipper Zero devices. Our goal is to provide well-documented, maintainable, and testable firmware improvements and optional features that empower researchers, hardware hackers, and hobbyists to experiment with the device while encouraging responsible, lawful behavior.
 
-### Sub-GHz
+What is SubSpectra custom firmware
+---------------------------------
+The SubSpectra firmware is a fork/extension of the Flipper Zero firmware ecosystem (see the firmware repository for exact lineage and third-party components). It may include:
+- additional device features and apps,
+- experimental tools for signal inspection and debugging,
+- UI improvements and quality-of-life enhancements,
+- optional integrations and community-contributed plugins.
 
-- [How to use Flipper as rolling code remote (Doorhan, Nice FlorS, BFT Mitto, Somfy Telis, Aprimatic, AN-Motors, etc..)](/documentation/SubGHzRemoteProg.md)  
-- [Experimental rolling code counter modes (avoid desync)](/documentation/SubGHzCounterMode.md)  
-- External Radio: [How to connect CC1101 module](https://github.com/quen0n/flipperzero-ext-cc1101)  
-- Transmission is blocked? [How to extend Sub-GHz frequency range](/documentation/DangerousSettings.md)
-- [How to add extra Sub-GHz frequencies](/documentation/SubGHzSettings.md)
-- [~~Configure Sub-GHz Remote App~~](/documentation/SubGHzRemotePlugin.md) ⚠️ Not recommended, please use embedded configurator
+Key features (examples)
+-----------------------
+- Modular apps and plugin architecture
+- Improved UI workflows for common tasks
+- Optional developer/debugging tools
+- Device profiles and experimental drivers
+- Funny animations
+- Advanced Sub ghz.
+- Games
 
-###  Plugins
+Compatibility & safety
+----------------------
+- Supported devices: Flipper Zero (check the firmware repo for exact supported hardware and model constraints).
+- Installing third‑party firmware can void your device warranty and may brick your device if done incorrectly. Proceed only if you accept those risks.
+- SubSpectra firmware may modify device operation. Use the firmware responsibly and only on devices you own or are explicitly authorized to modify.
+- We do not condone or support using this firmware for illegal activities (unauthorized access, evading protections, committing fraud, etc.). See Legal Terms below.
 
-- TOTP (Authenticator): [config description](https://github.com/akopachov/flipper-zero_authenticator/blob/master/docs/conf-file_description.md) 
-- Barcode Generator: [How to use](/documentation/BarcodeGenerator.md)
-- Multi Converter: [How to use](/documentation/MultiConverter.md)
-- WAV Player: [sample files & how to convert](https://github.com/UberGuidoZ/Flipper/tree/main/Wav_Player#readme)  
-- Sub-GHz playlist: [generator script](https://github.com/darmiel/flipper-scripts/blob/main/playlist/playlist_creator_by_chunk.py)
+Getting started
+---------------
+- Visit the firmware repository for release downloads, installation instructions, and the changelog: https://github.com/SubSpectra/flipper-zero-firmware
+- Follow device- and platform-specific instructions provided in the repo. Do not follow untrusted or unknown guides.
+- If you are unsure whether a feature or usage is lawful in your jurisdiction, consult a qualified legal advisor.
 
-###  GPIO - Plugins that works with external hardware
+Contribution & community
+------------------------
+We welcome contributions: bug reports, documentation fixes, tests, code, and design improvements.
 
-- Unitemp - Temperature sensors reader: [How to use & supported sensors](https://github.com/quen0n/unitemp-flipperzero#readme)
-- [NMEA] GPS: [How to use](https://github.com/xMasterX/all-the-plugins/blob/dev/base_pack/gps_nmea_uart/README.md)  
-- i2c Tools [How to use](https://github.com/xMasterX/all-the-plugins/blob/dev/base_pack/flipper_i2ctools/README.md)  
-- [NRF24] plugins: [How to use](/documentation/NRF24.md)  
-- [WiFi] Scanner: [How to use](https://github.com/SequoiaSan/FlipperZero-WiFi-Scanner_Module#readme) | [Web Flasher](https://sequoiasan.github.io/FlipperZero-WiFi-Scanner_Module/)
-- [ESP8266] Deauther: [How to use](https://github.com/SequoiaSan/FlipperZero-Wifi-ESP8266-Deauther-Module#readme) | [Web Flasher](https://sequoiasan.github.io/FlipperZero-Wifi-ESP8266-Deauther-Module/)
-- [ESP32] WiFi Marauder: [How to use](https://github.com/UberGuidoZ/Flipper/tree/main/Wifi_DevBoard)<sub> docs by UberGuidoZ</sub> | [Marauder repo](https://github.com/justcallmekoko/ESP32Marauder)
-- [ESP32-CAM] Camera Suite: [How to use](https://github.com/CodyTolene/Flipper-Zero-Camera-Suite)
-- How to Upload `.bin` to ESP32/ESP8266: [Windows](https://github.com/SequoiaSan/Guide-How-To-Upload-bin-to-ESP8266-ESP32) | [FAP "ESP flasher"](https://github.com/0xchocolate/flipperzero-esp-flasher)
-- [GPIO] SentrySafe plugin: [How to use](/documentation/SentrySafe.md)
+Please follow these org-level expectations:
+- Read the repository CONTRIBUTING.md and CODE_OF_CONDUCT.md (if present).
+- Open issues for non-trivial changes before submitting large PRs.
+- Keep PRs focused and include tests/documentation for behavior changes.
+- Respect maintainers' reviews and be responsive to feedback.
 
-***
+Suggested labels across the org:
+- good first issue
+- help wanted
+- bug
+- enhancement
+- docs
 
-### Links
-These are notable links for SubSpetra firmware:
-- [Flipper Docs](https://docs.flipper.net/)
-- [SubSpectra Website](https://subspectra.finnsabia.com/)
-- [Flipper Website](https://flipperzero.one/)
-- [Flipper Community](https://flipperzero.one/community)
-> [!Important]
-> This links are safe and secure.
-***
-### Notes
+Security disclosures
+--------------------
+If you discover a security vulnerability, please do not open a public issue. Instead:
+- Send an encrypted report to our security contact: subspectra@finnsabia.com
+- Include: affected project, affected versions, steps to reproduce, impact, and any mitigation suggestions.
+- We will acknowledge reports promptly and coordinate a responsible disclosure and fix.
 
-Thank you for supporting and downloading SubSpectra custom firmware. If you have questions, sugestions, or bug reports go to the discussions page to talk to us.
-***
-### Made by @Sysop200
-Copyright (c) 2025 SubSpectra Project Authors
+Legal terms and license
+-----------------------
+This section provides a high-level legal overview. It does not constitute legal advice.
+
+License
+- The SubSpectra firmware and related code are released under the [GNU General Public License v3.0 or later (GPL-3.0-or-later)](https://www.gnu.org/licenses/gpl-3.0.en.html) by default (see the repository LICENSE file). Replace this with your chosen license if different. The choice of license affects redistribution and derivative works.
+
+No warranty / Limitation of liability
+- The firmware is provided "AS IS", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, non-infringement, or that operation will be uninterrupted or error-free.
+- To the fullest extent permitted by law, SubSpectra and its contributors shall not be liable for any direct, indirect, incidental, special, exemplary, or consequential damages arising from use of the firmware.
+
+Acceptable use policy
+- You must not use SubSpectra firmware to engage in unlawful activity. This includes, but is not limited to:
+  - Unauthorized access to systems or devices
+  - Circumventing protections on other devices
+  - Creating, distributing, or facilitating malicious tools intended for wrongdoing
+- Users are responsible for ensuring their activities comply with applicable laws, regulations, and third-party terms.
+
+Export controls and compliance
+- You are responsible for complying with all export laws and regulations that apply to your country and the code you distribute or use. Some cryptographic or radio capabilities may be restricted in certain jurisdictions.
+
+DMCA and takedown
+- If you believe content in SubSpectra repositories infringes your copyright, follow the DMCA takedown process described in the repository (or contact us at legal@subspectra.example). We will follow applicable law regarding infringement claims.
+
+Trademark & attribution
+-----------------------
+- "Flipper Zero" is a product name and may be a registered trademark of its respective owner (for example, Flipper Devices). SubSpectra is an independent community project and is not endorsed by or affiliated with the Flipper Devices company unless explicitly stated.
+- Do not imply official endorsement or partnership with Flipper Devices or other third parties without permission.
+- Provide proper attribution for third-party code, libraries, and assets per their licenses.
+
+Security & responsible research
+-------------------------------
+- We encourage responsible security research and disclosure. Do not publish exploit code or step-by-step instructions that would enable widespread abuse without coordinating mitigations with affected vendors and following a responsible disclosure timeline.
+- Where research could be dual-use, consider redacting sensitive details and coordinating disclosures.
+
+Contact
+-------
+- Firmware repository (issues, code, releases): https://github.com/SubSpectra/flipper-zero-firmware
+- Security (private disclosure): security@subspectra.example 
+- General: subspectra@finnsabia.com 
+- Legal: legal@finnsabia.com 
+
+Acknowledgements
+----------------
+We stand on the shoulders of many upstream projects and the Flipper community. See the repository for third-party notices and detailed attributions.
+
+---
+
