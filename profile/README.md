@@ -12,7 +12,7 @@
 
 SubSpectra is the organization behind the SubSpectra custom firmware for Flipper Zero devices. We build, maintain, and document an extensible custom firmware distribution intended to expand the capabilities of Flipper Zero hardware for lawful research, testing, and hobbyist use.
 
-This README gives a high-level overview of the project, community guidelines, and legal terms. For code, releases, installation instructions, and issue tracking please see the specific repository for the firmware: https://github.com/SubSpectra/flipper-zero-firmware (replace with the actual repo URL).
+This README gives a high-level overview of the project, community guidelines, and legal terms. For code, releases, installation instructions, and issue tracking please see the specific repository for the firmware: https://github.com/SubSpectra/flipper-zero-firmware
 
 Table of contents
 - About
